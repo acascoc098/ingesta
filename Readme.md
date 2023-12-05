@@ -195,3 +195,110 @@ public class Cliente {
     ...
 }
 ```
+
+## HACEMOS LOS DAO
+
+¡¡Todos estos están comentados dentro de la clase!!
+
+#### Alojamiento.java
+
+
+```java
+public interface AlojamientoDAO {
+    public Alojamiento create(Alojamiento Alojamiento) throws ExcDAO;
+
+    public List<Alojamiento> findAll() throws ExcDAO;
+    
+    public Alojamiento findById(int id) throws ExcDAO;
+    
+    public Alojamiento update(int idOldAlojamiento, Alojamiento newAlojamiento) throws ExcDAO;
+    public Alojamiento update(Alojamiento OldAlojamientoe, Alojamiento newAlojamiento) throws ExcDAO;
+    
+    public Alojamiento delete(int idAlojamiento) throws ExcDAO;    
+    public Alojamiento delete(Alojamiento alojamiento) throws ExcDAO;
+}
+
+```
+
+#### Reserva.java
+
+La clase reserva según su tabla vemos que tiene los siguientes atributos:
+
+```java
+public interface ReservaDAO {
+    
+    public Reserva create(Reserva Reserva) throws ExcDAO;
+
+    
+    public List<Reserva> findAll() throws ExcDAO;
+    
+    
+    public Reserva findById(int id) throws ExcDAO;
+    
+    
+    public Reserva update(int idOldReserva, Reserva newReserva) throws ExcDAO;
+    public Reserva update(Reserva oldReserva, Reserva newReserva) throws ExcDAO;
+    
+    
+    public Reserva delete(int idReserva) throws ExcDAO;    
+    public Reserva delete(Reserva Reserva) throws ExcDAO;
+
+    
+    public List<Reserva> findByAlojamiento(Alojamiento alojamiento) throws ExcDAO;
+}
+```
+
+#### Contacto.java
+
+La clase contacto según su tabla vemos que tiene los siguientes atributos:
+
+```java
+public interface ContactoDAO {
+    
+    public Contacto create(Contacto contacto) throws ExcDAO;
+
+    
+    public List<Contacto> findAll() throws ExcDAO;
+    
+    
+    public Contacto findById(int id) throws ExcDAO;
+    
+    public Contacto update(int idOldContacto, Contacto newContacto) throws ExcDAO;
+    public Contacto update(Contacto OldContacto, Contacto newContacto) throws ExcDAO;
+    
+    
+    public Contacto delete(int idContacto) throws ExcDAO;    
+    public Contacto delete(Contacto Contacto) throws ExcDAO;
+}
+```
+
+#### Cliente.java
+
+La clase cliente según su tabla vemos que tiene los siguientes atributos:
+
+```java
+public interface ClienteDAO {
+    
+    public Cliente create(Cliente cliente) throws ExcDAO;
+
+    
+    public List<Cliente> findAll() throws ExcDAO;
+    
+    
+    public Cliente findById(int id) throws ExcDAO;
+    
+    
+    public Cliente update(int idOldCliente, Cliente newCliente) throws ExcDAO;
+    public Cliente update(Cliente OldCliente, Cliente newCliente) throws ExcDAO;
+    
+    
+    
+    public Cliente delete(int idCliente) throws ExcDAO;
+
+    
+    public Cliente delete(Cliente Cliente) throws ExcDAO;
+
+    
+    public List<Cliente> findByReserva(Reserva reserva) throws ExcDAO;
+}
+```
