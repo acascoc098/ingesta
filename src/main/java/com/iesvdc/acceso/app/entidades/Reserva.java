@@ -2,8 +2,6 @@ package com.iesvdc.acceso.app.entidades;
 
 import java.time.LocalDate;
 
-import org.apache.tools.ant.taskdefs.Local;
-
 public class Reserva {
     private Alojamiento alojamiento;
     private LocalDate entrada;
@@ -86,7 +84,7 @@ public class Reserva {
             return false;
         return true;
     }
-    
+
     @Override
     public String toString() {
         return "Reserva [alojamiento=" + alojamiento + ", entrada=" + entrada + ", salida=" + salida + ", pension="

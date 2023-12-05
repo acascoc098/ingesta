@@ -86,3 +86,112 @@ CREATE TABLE cliente(
 );
 ```
 
+## ENTIDADES/MODELOS
+
+Para cada tabla crearemos una clase en java:
+
+#### Alojamiento.java
+
+La clase alojamiento según su tabla vemos que tiene los siguientes atributos:
+
+```java
+public class Alojamiento {
+    private int id;
+    private String tipo;
+    private String nombre;
+    private String direccion;
+    private int telefono;
+    
+    //Creamos su constructor
+    public Alojamiento(int id, String tipo, String nombre, String direccion, int telefono) {
+        this.id = id;
+        this.tipo = tipo;
+        this.nombre = nombre;
+        this.direccion = direccion;
+        this.telefono = telefono;
+    }
+
+    //Creamos sus getter y setter de cada atributo
+    ...
+
+    //Métodos toString(), equals() y hasCode()
+    ...
+}
+```
+
+#### Reserva.java
+
+La clase reserva según su tabla vemos que tiene los siguientes atributos:
+
+```java
+public class Reserva {
+    private Alojamiento alojamiento;
+    private LocalDate entrada;
+    private LocalDate salida;
+    private String pension;
+
+    //Creamos constructor
+    public Reserva(Alojamiento alojamiento, LocalDate entrada, LocalDate salida, String pension) {
+        this.alojamiento = alojamiento;
+        this.entrada = entrada;
+        this.salida = salida;
+        this.pension = pension;
+    }
+
+    //Creamos sus getter y setter de cada atributo
+    ...
+
+    //Métodos toString(), equals() y hasCode()
+    ...
+}
+```
+
+#### Contacto.java
+
+La clase contacto según su tabla vemos que tiene los siguientes atributos:
+
+```java
+public class Contacto {
+    private String email;
+    private int telefono;
+
+    //Creamos el constructor
+    public Contacto(String email, int telefono) {
+        this.email = email;
+        this.telefono = telefono;
+    }
+
+    //Creamos sus getter y setter de cada atributo
+    ...
+
+    //Métodos toString(), equals() y hasCode()
+    ...
+}
+```
+
+#### Cliente.java
+
+La clase cliente según su tabla vemos que tiene los siguientes atributos:
+
+```java
+public class Cliente {
+    private int id;
+    private String nombre;
+    private Contacto contact;
+    private Reserva reserva;
+
+    //Creamos su constructor
+    public Cliente(int id, String nombre, Contacto contact, Reserva reserva) {
+        this.id = id;
+        this.nombre = nombre;
+        this.contact = contact;
+        this.reserva = reserva;
+    }
+
+    //Creamos sus getter y setter de cada atributo
+    ...
+
+    //Métodos toString(), equals() y hasCode()
+    ...
+}
+```
