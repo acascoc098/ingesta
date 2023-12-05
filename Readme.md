@@ -53,15 +53,15 @@ use reservas;
 
 DROP TABLE IF EXISTS reserva;
 DROP TABLE IF EXISTS alojamiento;
-DROP TABLE IF EXISTS contacto;
 DROP TABLE IF EXISTS cliente;
+DROP TABLE IF EXISTS contacto;
 
 CREATE TABLE alojamiento(
     id INT AUTO_INCREMENT PRIMARY KEY,
     tipo VARCHAR(20),
     nombre VARCHAR(25),
     direccion VARCHAR(25),
-    telefono INT CONSTRAINT telefono_restric_a CHECK (telefono > 600000000 ), CHECK (telefono< 999999999)
+    telefono VARCHAR(20)
 );
 
 CREATE TABLE reserva(
@@ -74,7 +74,7 @@ CREATE TABLE reserva(
 
 CREATE TABLE contacto(
     email VARCHAR(25) PRIMARY KEY,
-    telefono INT CONSTRAINT telefono_restric_c CHECK (telefono > 600000000 ), CHECK (telefono< 999999999)
+    telefono VARCHAR(20)
 );
 
 CREATE TABLE cliente(
@@ -85,3 +85,4 @@ CREATE TABLE cliente(
     FOREIGN KEY (contacto) REFERENCES contacto(email)
 );
 ```
+
