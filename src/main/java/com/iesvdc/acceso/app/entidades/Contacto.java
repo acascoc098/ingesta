@@ -1,16 +1,19 @@
 package com.iesvdc.acceso.app.entidades;
 
 public class Contacto {
+    private int id;
     private String email;
     private int telefono;
 
     //Creamos el constructor
-    public Contacto(String email, int telefono) {
+    public Contacto(int id, String email, int telefono) {
+        this.id = id;
         this.email = email;
         this.telefono = telefono;
     }
 
     //Creamos los getter y setter
+    
     public String getEmail() {
         return email;
     }
@@ -28,6 +31,7 @@ public class Contacto {
     public int hashCode() {
         final int prime = 31;
         int result = 1;
+        result = prime * result + id;
         result = prime * result + ((email == null) ? 0 : email.hashCode());
         result = prime * result + telefono;
         return result;
@@ -42,6 +46,8 @@ public class Contacto {
         if (getClass() != obj.getClass())
             return false;
         Contacto other = (Contacto) obj;
+        if (id != other.id)
+            return false;
         if (email == null) {
             if (other.email != null)
                 return false;
@@ -54,7 +60,15 @@ public class Contacto {
 
     @Override
     public String toString() {
-        return "Contacto [email=" + email + ", telefono=" + telefono + "]";
+        return "Contacto [id=" + id + ", email=" + email + ", telefono=" + telefono + "]";
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
     
     

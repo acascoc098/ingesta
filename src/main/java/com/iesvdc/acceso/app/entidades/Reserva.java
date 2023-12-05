@@ -3,13 +3,15 @@ package com.iesvdc.acceso.app.entidades;
 import java.time.LocalDate;
 
 public class Reserva {
+    private int id;
     private Alojamiento alojamiento;
     private LocalDate entrada;
     private LocalDate salida;
     private String pension;
 
     //Creamos constructor
-    public Reserva(Alojamiento alojamiento, LocalDate entrada, LocalDate salida, String pension) {
+    public Reserva(int id, Alojamiento alojamiento, LocalDate entrada, LocalDate salida, String pension) {
+        this.id = id;
         this.alojamiento = alojamiento;
         this.entrada = entrada;
         this.salida = salida;
@@ -46,6 +48,7 @@ public class Reserva {
     public int hashCode() {
         final int prime = 31;
         int result = 1;
+        result = prime * result + id;
         result = prime * result + ((alojamiento == null) ? 0 : alojamiento.hashCode());
         result = prime * result + ((entrada == null) ? 0 : entrada.hashCode());
         result = prime * result + ((salida == null) ? 0 : salida.hashCode());
@@ -62,6 +65,8 @@ public class Reserva {
         if (getClass() != obj.getClass())
             return false;
         Reserva other = (Reserva) obj;
+        if (id != other.id)
+            return false;
         if (alojamiento == null) {
             if (other.alojamiento != null)
                 return false;
@@ -87,8 +92,16 @@ public class Reserva {
 
     @Override
     public String toString() {
-        return "Reserva [alojamiento=" + alojamiento + ", entrada=" + entrada + ", salida=" + salida + ", pension="
-                + pension + "]";
+        return "Reserva [id=" + id + ", alojamiento=" + alojamiento + ", entrada=" + entrada + ", salida=" + salida
+                + ", pension=" + pension + "]";
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     
