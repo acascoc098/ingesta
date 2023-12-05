@@ -22,7 +22,7 @@ La **tarea batch** no es más que un JSON con este formato:
 
 **Version JSON**
 
-```json
+json
 {
    "reservas": [
       {
@@ -159,11 +159,11 @@ La **tarea batch** no es más que un JSON con este formato:
       }
    ]
 }
-```
+
 
 **Version XML**
 
-```xml
+xml
 <reservas>
     <cliente>
         <id>1</id>
@@ -286,7 +286,7 @@ La **tarea batch** no es más que un JSON con este formato:
         </reserva>
     </cliente>
 </reservas>
-```
+
 
 Hay que implementar lo siguiente:
 
@@ -297,7 +297,7 @@ Puedes probar si el punto 2 funciona con esta nueva tarea batch:
 
 **Versión JSON**:
 
-```json
+json
 {
    "reservas": [
       {
@@ -347,12 +347,12 @@ Puedes probar si el punto 2 funciona con esta nueva tarea batch:
    ]
 }
 
-```
+
 
 
 **Version XML**:
 
-```xml
+xml
 <reservas>
     <cliente>
         <id>5</id>
@@ -395,4 +395,4 @@ Puedes probar si el punto 2 funciona con esta nueva tarea batch:
         </reserva>
     </cliente>
 </reservas>
-```
+

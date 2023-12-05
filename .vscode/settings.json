@@ -1,3 +1,19 @@
 {
-    "java.configuration.updateBuildConfiguration": "automatic"
+    "java.configuration.updateBuildConfiguration": "automatic",
+    "sqltools.connections": [
+        {
+            "mysqlOptions": {
+                "authProtocol": "default",
+                "enableSsl": "Disabled"
+            },
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 33307,
+            "driver": "MySQL",
+            "username": "root",
+            "password": "s83n38DGB8d72",
+            "database": "reservas",
+            "name": "reservas"
+        }
+    ]
 }
